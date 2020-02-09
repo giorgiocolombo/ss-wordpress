@@ -15,7 +15,27 @@
          */
         add_theme_support( "post-thumbnails" );
     }
+    
     add_action('after_setup_theme', 'ss_setup');
+    
+    // Galleria custom post type function
+    function create_gallerie() {
+    
+        register_post_type( 'gallerie',
+            array(
+                'labels' => array(
+                    'name' => __( 'Gallerie' ),
+                    'singular_name' => __( 'Galleria' )
+                ),
+                'public' => true,
+                // 'has_archive' => true,
+                'rewrite' => array('slug' => 'gallerie'),
+                'supports' => array( 'title', 'excerpt', 'custom-fields' , 'thumbnail')
+            )
+        );
+    }
+    // Hooking up our function to theme setup
+    add_action( 'init', 'create_gallerie' );
 
     function ss_styles(){
         wp_enqueue_style( 'ss_reset', get_stylesheet_directory_uri().'/style.css' , array() , '1.0.0' , 'all'  );
@@ -31,8 +51,6 @@
         wp_enqueue_script( 'ss_script', SS_INCLUDES.'js/script.js' , array('ss_imagesloaded') , '1.0.0' , 'all');     
     }
     add_action('wp_enqueue_scripts', 'ss_scripts');
-
-
 
     // i want to remove the support (because it's heavy) to emoticons
 

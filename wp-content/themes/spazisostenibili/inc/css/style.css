@@ -802,6 +802,9 @@ body {
     padding: 2rem;
     font-family: 'Prata', serif;
     grid-area: gallery_info;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 .gallery_page_suggestions{
     width: 100%;
@@ -1008,7 +1011,10 @@ body {
     }
 
 /* CSS SINGLE ARTICLE */
-
+#single .wp-block-image{
+    max-width: 60% !important;
+    margin: 4rem auto;
+}
 #single .banner {
     background-image: url(img/sample_greenpark.jpg);
     height: 400px;
