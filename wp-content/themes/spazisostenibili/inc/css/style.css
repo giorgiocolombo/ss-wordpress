@@ -934,7 +934,7 @@ body {
         grid-row: 15/51;
     }
     .container_article_archive .text_card_p{
-        height: 150px;
+        height: 150px !important;
         text-overflow: hidden;
     }
     .container_article_archive .pic_card_container{
@@ -963,9 +963,15 @@ body {
         grid-row: 23/51;
         background-color: #0f8b8d;
         color:white;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
     }
     .container_gallery_archive .tags{
         color:white;
+    }
+    .container_gallery_archive .interaction{
+        width: 100%;
     }
     .container_gallery_archive .button_article{
         background-color:#f47878;
@@ -1269,6 +1275,110 @@ footer ul>li{
     margin: auto 5rem 2rem ;
 }
 
+}
+
+/* About */
+.cit{
+    max-width: 1200px;
+    text-align: right;
+    margin: 4rem 2rem;
+    font-size: 1.6rem;
+    font-family: 'Prata',serif;
+    letter-spacing: 0.2rem
+}
+.cit p{
+    margin: 2rem auto
+}
+.italic{
+    font-style: italic;
+}
+.testo{
+    grid-area: testo;
+    font-size: 1.1rem;
+    font-family: 'Montserrat', sans-serif;
+    width: 80%;
+    margin: 3rem auto;
+}
+.testo p{
+    margin: 2rem auto;
+    line-height: 1.5;
+    letter-spacing: 0.05rem
+}
+.profile_pics{
+    grid-area: foto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.about{
+    display: grid;
+    grid-template-areas: "foto" "testo";
+
+}
+.profile_pics_single{
+    max-width: 250px;
+    max-height: 250px;
+    overflow: none;
+    position: relative;
+    padding: 0.5rem;
+}
+.profile_pics_single img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile_pic_cover{
+    position: absolute;
+    bottom: 0;
+    left: 0.5rem;
+    width: calc(100% - 1rem);
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 30%);
+    z-index: 2;
+    opacity: 0.8;
+}
+.name{
+    position: absolute;
+    bottom: 0.2rem;
+    left: 7.5%;
+    color: #fff;
+    text-transform: uppercase;
+    font-family:'Montserrat', sans-serif;
+    text-align: center;
+    width: 85%;
+    text-shadow: 1px 1px 10px #000;
+    z-index: 3;
+}
+
+@media(max-width:700px){
+    .cit{
+        letter-spacing: 0.5rem;
+        margin: 4rem auto;
+        text-align: center
+    }
+}
+@media(min-width:700px){
+    .cit{
+        letter-spacing: 0.5rem;
+        margin: 4rem auto;
+        text-align: center
+    }
+}
+@media(min-width:1200px){
+    .about{
+    display: grid;
+    grid-template-areas: "testo foto" "testo null";
+    max-width: 80%;
+    margin: auto;
+    margin-bottom: 4rem;
+    }
+    .testo{
+        font-size: 1.3rem;
+        margin: 0 auto;
+    }
+    .profile_pics{
+    margin: 2rem auto;
+    }
 }
 
 

@@ -169,6 +169,6 @@
             </div>
     </section>
     <div class="link_to_archive_div">
-        <a href="archive.php" class="link_to_archive" data-aos="zoom-in" data-aos-duration="150" data-aos-delay="100">Vai all'archivio</a>
+        <a href="<?php echo(SS_URL)?>archivio" class="link_to_archive" data-aos="zoom-in" data-aos-duration="150" data-aos-delay="100">Vai all'archivio</a>
     </div>
 <?php get_footer() ?>
