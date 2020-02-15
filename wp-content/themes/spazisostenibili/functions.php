@@ -6,6 +6,8 @@
      * @since 1.0.0
      * @version 1.0.0
     */
+    
+    define( 'SS_IS_ADMIN', current_user_can('edit_others_posts') );
 
     function ss_setup(){
         /**
@@ -14,9 +16,24 @@
          * @see http:developer.wordpress.org/reference/functions/add_theme_
          */
         add_theme_support( "post-thumbnails" );
+        add_theme_support( "title-tag" );
+        add_theme_support( "wp-block-styles" );
+        add_theme_support( "align-wide" );
+        register_nav_menus(['main_menu' => 'Menu Principale']);
     }
-    
     add_action('after_setup_theme', 'ss_setup');
+
+    function ss_widget_area_registration(){
+        register_sidebar([
+            'name' => 'Footer',
+            'id' => 'footer',
+            'before_widget' => '<div>',
+            'after_widget' => '</div>',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>',
+        ]);
+    }
+    add_action ('widgets_init','ss_widget_area_registration');
     
     // Galleria custom post type function
     function create_gallerie() {
@@ -52,6 +69,4 @@
     }
     add_action('wp_enqueue_scripts', 'ss_scripts');
 
-    // i want to remove the support (because it's heavy) to emoticons
-
-    remove_action('wp_head','print_emoji_detection_script', 7);
+    // remove_action('wp_head','print_emoji_detection_script', 7);
