@@ -116,7 +116,7 @@ a{
 }
 .menu-item {
     width: 100%;
-    padding: 2rem 0;
+    padding: 3rem 2rem;
     position: relative;
     border-left: 0px solid #0f8b8d;
     box-sizing: border-box;
@@ -197,12 +197,6 @@ a{
     transition: all 0.25s ease-in;
 }
 
-@media (min-width:1000px){
-    .menu a{
-        padding: 3rem;
-    }
-}
-
 @media (max-width:400px){
     .menu{
         width: 100vw;
@@ -214,21 +208,9 @@ a{
         padding: 1rem 6rem;
     }
 }
-
-@media (max-height:650px){
-    .menu a{
-        padding: 5vh 3rem;
-    }
-    .logo_menu{
-        display: none;
-    }
-}
-@media (max-height:550px){
-    .menu a{
-        padding: 5vh 3rem;
-    }
-    .menu{
-        padding-bottom: 0;
+@media (max-height:600px){
+    .menu-item{
+        padding: 1rem 2rem;
     }
 }
 
@@ -447,8 +429,7 @@ body {
 .text_card_p{
     margin: 1rem auto;
     overflow: hidden;
-    height: 48%;
-    min-height: 150px;
+    height: 155px;
     line-height: 1.2;
     width: 100%;
 }
@@ -658,7 +639,7 @@ body {
     position: absolute;
     bottom:10%;
     right:5%;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     text-align: right;
     text-transform: uppercase;
     font-family: 'Prata', serif;
